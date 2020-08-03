@@ -1,0 +1,52 @@
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>Quantity</td>
+			<td colspan="1"></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= product.price %></td>
+			<td><%= product.quantity %></td>
+			<td>
+				<%= 
+					button_to "Delete", 
+					product, method: :delete, 
+					class: "btn btn-danger",
+					data: {confirm: "Are you sure you want to delete #{product.name}?"} 
+				%>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<div class="alert alert-success" role="alert">
+		<h3 class="alert-heading">Product with Discount</h3>
+	</div>
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>Quantity</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @product_with_discount.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= product.price %></td>
+			<td><%= product.quantity %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
