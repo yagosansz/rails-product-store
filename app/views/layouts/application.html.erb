@@ -13,6 +13,7 @@
     <%= nav_bar brand: "Rails Store", brand_link: root_path do %>
       <%= menu_group do %>
         <%= menu_item "Add New Product", new_product_path %>
+        <%= menu_item "Departments", departments_path %>
       <% end %>
       <%= form_tag search_product_path, method: :get, class: "navbar-form navbar-right" do %>
         <div class="form-group">
